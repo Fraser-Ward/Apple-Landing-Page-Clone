@@ -1,0 +1,77 @@
+.hero {
+    &__item_container {
+        display: flex;
+        flex-direction: column;
+        height: 500px;
+        width: 100%;
+        margin-bottom: 0.625rem;
+        text-align: center;
+
+        h2 {
+            padding-top: 40px;
+        }
+
+        a,
+        a:visited {
+            color: $linkBlue;
+            font-size: 1.25rem;
+            font-weight: 400;
+            &:not(:first-child) {
+                margin-left: 0.625rem;
+            }
+
+            &:hover {
+                text-decoration: underline;
+                text-decoration-thickness: 1px;
+            }
+        }
+
+        &:nth-child(1) {
+            background: url("../images/hero_iphone_13pro.jpg") bottom no-repeat;
+
+            @include breakpoint-up(medium) {
+                // for the medium breakpoint change the height.
+                background-size: cover;
+                background-position: 50%;
+                height: 580px;
+            }
+        }
+
+        &:nth-child(2) {
+            justify-content: center;
+            background: url("../images/hero_iphone_13.jpg") center no-repeat;
+            h2 {
+                color: $white;
+            }
+            h3 {
+                color: lightpink;
+                font-weight: 400;
+            }
+
+            @include breakpoint-up(medium) {
+                // for the medium breakpoint change the height.
+                background: url("../images/hero_iphone_13_medium.jpg") center no-repeat;
+                background-size: cover;
+                height: 580px;
+                justify-content: flex-start;
+            }
+        }
+        &:nth-child(3) {
+            justify-content: flex-end;
+            background: url("../images/hero_airpods.jpg") top no-repeat;
+            padding-bottom: 1.25rem;
+
+            h2,
+            h3 {
+                color: $white;
+            }
+
+            @include breakpoint-up(medium) {
+                // for the medium breakpoint change the height.
+                background-size: cover;
+                background-position: top;
+                height: 580px;
+            }
+        }
+    }
+}

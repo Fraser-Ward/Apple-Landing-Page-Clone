@@ -1,0 +1,174 @@
+.footer {
+    height: 100%;
+    width: 100%;
+    background-color: $footerGrey;
+    color: $textGrey;
+    font-size: $font-sm;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        padding-bottom: 0.625rem;
+    }
+
+    .terms {
+        &:first-child {
+            padding-top: 1.25rem;
+        } 
+        &:last-child {
+            padding-bottom: 0.625rem;
+        }
+        span {
+            color: $linkGrey;
+            &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__container {
+        width: calc(100% - 3rem);
+        @include breakpoint-up(large) {
+            width: calc(75% - 3rem);
+        }
+    }
+    &__link_container {
+        .accordion_item {
+            &_header {
+                font-size: $font-sm;
+                font-weight: 500;
+                color: $textGrey;
+                display: flex;
+                position: relative;
+                margin: 0.3125rem 0;
+
+                &:hover {
+                    color: #1d1d1f;
+                    cursor: pointer;
+                }
+
+                &::after {
+                    // +
+                    content: "\002B";
+                    font-size: 0.875rem;
+                    position: absolute;
+                    right: 1rem;
+                    transition: all 200ms ease-in;
+                }
+                &.active::after {
+                    transform: rotate(45deg);
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 1px;
+                    background-color: $footerBorderGrey;
+                    bottom: 2rem;
+                }
+            }
+
+            &_body {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 200ms ease-in-out;
+                a {
+                    color: $textGrey;
+                    padding-left: 0.9375rem;
+                    &:hover {
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+    &__link_container_desktop {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+
+        @include breakpoint-up(large){
+            border-top: 1px solid $footerBorderGrey;
+        }
+
+        h3 {
+            font-size: $font-sm;
+            font-weight: 500;
+            &:first-child {
+                margin-top: 0.625rem;
+            }
+        }
+        a {
+            color: $textGrey;
+            &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+    }}
+
+    &__lower_footer {
+        @include breakpoint-down(medium){
+            border-top: 1px solid $footerBorderGrey;
+        }
+        a {
+            color: $linkGrey;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    &__contact_info {
+        padding-top: 0.3125rem;
+
+        span {
+            color: $linkBlue;
+            &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+    }
+    .copyright {
+        margin-bottom: 0.3125rem;
+    }
+    .copyright2 {
+        margin: 0;
+    }
+    &__lower_links {
+
+        @include breakpoint-up(medium) {
+            display: inline-flex;
+            justify-content: space-between;
+            border-top: 1px solid $footerBorderGrey;
+            width: 100%;
+            padding-top: 0.625rem;
+            margin-bottom: 1.25rem;
+        }
+
+        @include breakpoint-down(medium){
+        margin-bottom: 0.625rem;
+        }
+
+         a {
+            padding-right: 0.625rem;
+             &:first-child {
+                padding-left: 0;
+             }
+            &:not(:last-child) {
+                border-right: 1px solid $footerBorderGrey;
+                margin-right: 0.625rem;
+            }
+        }
+    }
+}

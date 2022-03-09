@@ -1,0 +1,127 @@
+.feature {
+    text-align: center;
+
+    h4 {
+        font-size: $font-lg;
+        font-weight: 500;
+    }
+
+    h5 {
+        font-size: $font-md;
+        font-weight: 400;
+        padding: 0.625rem 0;
+    }
+
+    a,
+    a:visited {
+        color: $linkBlue;
+        font-size: 1.0625rem;
+        font-weight: bolder;
+        &:not(:first-child) {
+            margin-left: 0.625rem;
+        }
+
+        &:hover {
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+        }
+    }
+
+    &__container {
+        @include breakpoint-up(medium) {
+            display: flex;
+            flex: 1;
+        }
+    }
+
+    &__item_container1 {
+        display: flex;
+        flex-direction: column;
+        height: 31.25rem;
+        width: 100%;
+        margin-bottom: 0.625rem;
+
+        @include breakpoint-up(medium) {
+            margin-left: 0.625rem;
+        }
+
+        &:nth-child(1) {
+            background: url("../images/promo_watch.jpg") bottom no-repeat;
+            padding-top: 1.25rem;
+
+            span {
+                color: crimson;
+                font-weight: 400;
+                font-size: $font-sm;
+                &:nth-child(3) {
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                }
+            }
+
+            h4 {
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+        }
+
+        &:nth-child(2) {
+            background: url("../images/promo_macbook.jpg") bottom no-repeat;
+            padding-top: 1.875rem;
+        }
+    }
+
+    &__item_container2 {
+        display: flex;
+        flex-direction: column;
+        height: 31.25rem;
+        width: 100%;
+        margin-bottom: 0.625rem;
+
+        @include breakpoint-up(medium) {
+            margin-left: 0.625rem;
+        }
+
+        &:nth-child(1) {
+            background: url("../images/promo_airpods.jpg") bottom no-repeat;
+            justify-content: flex-end;
+            padding-bottom: 1.25rem;
+        }
+        &:nth-child(2) {
+            background: url("../images/promo_apple_fitness.jpg") bottom no-repeat;
+            padding-top: 1.875rem;
+        }
+    }
+
+    &__item_container3 {
+        display: flex;
+        flex-direction: column;
+        height: 31.25rem;
+        width: 100%;
+        margin-bottom: 0.625rem;
+
+        @include breakpoint-up(medium) {
+            margin-left: 0.625rem;
+        }
+
+        &:nth-child(1) {
+            background: url("../images/promo_airtag.jpg") bottom no-repeat;
+            padding-top: 30px;
+        }
+        &:nth-child(2) {
+            background: url("../images/promo_tv.jpg") center no-repeat;
+            justify-content: flex-end;
+            background-size: 150%;
+            padding-bottom: 1.25rem;
+            h4,
+            a {
+                color: $white;
+            }
+            h5 {
+                color: $headerGrey;
+                font-weight: 600;
+            }
+        }
+    }
+}
